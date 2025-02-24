@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "task1.h"
+
 using namespace std;
 
 void clearConsole();
@@ -8,7 +10,8 @@ void showMenuTask();
 void chooseTask();
 int sizeArray();
 vector<int> inputArray(int size);
-void findMaxNegativeElement();
+void task1();
+void task2();
 
 int main()
 {
@@ -16,25 +19,29 @@ int main()
 	return 0;
 }
 
-void findMaxNegativeElement()
+// void task1()
+// {
+// 	int size = sizeArray();
+// 	vector<int> array = inputArray(size);
+
+// 	int maxNegative = array[0];
+// 	int maxNegativeIndex = 0;
+
+// 	for (int i = 0; i < size; i++)
+// 		if (array[i] < 0 && array[i] > maxNegative)
+// 		{
+// 			maxNegative = array[i];
+// 			maxNegativeIndex = i;
+// 		}
+
+// 	if (maxNegative < 0)
+// 		cout << "Maximum negative element: " << maxNegative << " at index " << maxNegativeIndex << endl;
+// 	else
+// 		cout << "No negative elements in the array." << endl;
+// }
+
+void task2()
 {
-	int size = sizeArray();
-	vector<int> array = inputArray(size);
-
-	int maxNegative = array[0];
-	int maxNegativeIndex = 0;
-
-	for (int i = 0; i < size; i++)
-		if (array[i] < 0 && array[i] > maxNegative)
-		{
-			maxNegative = array[i];
-			maxNegativeIndex = i;
-		}
-
-	if (maxNegative < 0)
-		cout << "Maximum negative element: " << maxNegative << " at index " << maxNegativeIndex << endl;
-	else
-		cout << "No negative elements in the array." << endl;
 }
 
 void clearConsole()
@@ -48,7 +55,6 @@ void clearConsole()
 
 void showMenuTask()
 {
-	// clearConsole();
 	cout << "1.  Task 1\n";
 	cout << "2.  Task 2\n";
 	cout << "3.  Task 3\n";
@@ -68,10 +74,11 @@ void chooseTask()
 		{
 		case '1':
 			cout << "Task 1 selected\n";
-			findMaxNegativeElement();
+			task1();
 			break;
 		case '2':
 			cout << "Task 2 selected\n";
+			task2();
 			break;
 		case '3':
 			cout << "Task 3 selected\n";

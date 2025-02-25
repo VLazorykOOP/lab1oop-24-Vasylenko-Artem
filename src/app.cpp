@@ -1,15 +1,13 @@
 #include <iostream>
 #include <vector>
 
-#include "./headers/task1.h"
+#include "./includes/tasks.h"
+#include "./includes/console.h"
 
 using namespace std;
 
-void clearConsole();
 void showMenuTask();
 void chooseTask();
-int sizeArray();
-vector<int> inputArray(int size);
 
 int main()
 {
@@ -42,15 +40,6 @@ void task2()
 {
 }
 
-void clearConsole()
-{
-#ifdef _WIN32
-	system("cls");
-#else
-	system("clear");
-#endif
-}
-
 void showMenuTask()
 {
 	cout << "1.  Task 1\n";
@@ -72,7 +61,7 @@ void chooseTask()
 		{
 		case '1':
 			cout << "Task 1 selected\n";
-			task1();
+			task_01();
 			break;
 		case '2':
 			cout << "Task 2 selected\n";
@@ -95,26 +84,26 @@ void chooseTask()
 	}
 }
 
-int sizeArray()
-{
-	clearConsole();
-	int size = 0;
-	while (size <= 0)
-	{
-		cout << "Enter the size of the array:";
-		cin >> size;
-		clearConsole();
-		cout << "Size must be a positive number." << endl;
-	}
-	return size;
-}
+// int InputSizeArray()
+// {
+// 	clearConsole();
+// 	int size = 0;
+// 	while (size <= 0)
+// 	{
+// 		cout << "Enter the size of the array:";
+// 		cin >> size;
+// 		clearConsole();
+// 		cout << "Size must be a positive number." << endl;
+// 	}
+// 	return size;
+// }
 
-vector<int> inputArray(int size)
-{
-	vector<int> array(size);
-	cout << "Enter " << size << " elements: ";
-	for (int i = 0; i < size; i++)
-		cin >> array[i];
+// vector<int> inputElementsOfArray(int size)
+// {
+// 	vector<int> array(size);
+// 	cout << "Enter " << size << " elements: ";
+// 	for (int i = 0; i < size; i++)
+// 		cin >> array[i];
 
-	return array;
-}
+// 	return array;
+// }

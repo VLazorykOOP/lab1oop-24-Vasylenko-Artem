@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 
 #include "../includes/array.h"
 #include "../includes/console.h"
@@ -37,7 +38,7 @@ vector<int> inputElementsOfArray(int size)
 int findMaxNegativeElement(const std::vector<int> &array)
 {
 	bool isNegative = false;
-	int maxNegative = array[0];
+	int maxNegative = INT_MIN;
 	for (int i = 0; i < array.size(); i++)
 		if (array[i] < 0 && array[i] > maxNegative)
 		{

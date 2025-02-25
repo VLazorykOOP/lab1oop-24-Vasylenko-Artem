@@ -27,14 +27,18 @@ void task_01()
 			indexes.push_back(i);
 
 	int indexesSize = indexes.size();
+
 	if (indexesSize == 1)
 	{
 		cout << "Maximum negative element: " << maxNegative << " at index " << indexes[0] << endl;
 		return;
 	}
 
-	cout << "Maximum negative element: " << maxNegative << " at index [ ";
-	for (int i = 0; i < indexesSize; i++)
-		cout << indexes[i] << (indexesSize - 1 == i ? " " : ", ");
-	cout << "]\n";
+	if (indexesSize > 1)
+	{
+		cout << "Maximum negative element: " << maxNegative << " at index [ ";
+		for (int i = 0; i < indexesSize; i++)
+			cout << indexes[i] << (indexesSize - 1 == i ? " " : ", ");
+		cout << "]\n";
+	}
 }

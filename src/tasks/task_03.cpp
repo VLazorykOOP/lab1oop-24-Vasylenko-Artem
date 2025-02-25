@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "../includes/tasks.h"
 
 // Задано дійсні число г і масив А(п), n <= 200

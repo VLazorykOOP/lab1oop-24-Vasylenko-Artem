@@ -6,18 +6,22 @@
 
 using namespace std;
 
-int InputSizeArray()
+int InputSizeArray(int minSize)
 {
-	clearConsole();
-	int size = 0;
-	while (size <= 0)
+	int inputSize = 0;
+	while (inputSize <= minSize)
 	{
-		cout << "Enter the size of the array: ";
-		cin >> size;
+		cout << "Enter the size of the array (greater than " << minSize << "): ";
+		cin >> inputSize;
+
+		if (inputSize > minSize)
+			break;
+
 		clearConsole();
-		cout << "Size must be a positive number." << endl;
+		cout << "Size must be greater than " << minSize << endl;
 	}
-	return size;
+	clearConsole();
+	return inputSize;
 }
 
 vector<int> inputElementsOfArray(int size)
@@ -28,4 +32,17 @@ vector<int> inputElementsOfArray(int size)
 		cin >> array[i];
 
 	return array;
+}
+
+int findMaxNegativeElement(const std::vector<int> &array)
+{
+	bool isNegative = false;
+	int maxNegative = array[0];
+	for (int i = 0; i < array.size(); i++)
+		if (array[i] < 0 && array[i] > maxNegative)
+		{
+			isNegative = true;
+			maxNegative = array[i];
+		}
+	return isNegative ? maxNegative : 0;
 }

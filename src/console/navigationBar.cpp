@@ -14,11 +14,6 @@ bool checkChoiceInput(char ch, const vector<char> &validChoices)
 	return false;
 }
 
-void newLine()
-{
-	cout << "\n";
-}
-
 void showMenuTask()
 {
 	cout << "Tasks:";
@@ -56,16 +51,19 @@ void chooseTask()
 		case '1':
 			clearConsole();
 			cout << "Task 1 selected\n";
+			newLine();
 			task_01();
 			break;
 		case '2':
 			clearConsole();
 			cout << "Task 2 selected\n";
+			newLine();
 			task_02();
 			break;
 		case '3':
 			clearConsole();
 			cout << "Task 3 selected\n";
+			newLine();
 			task_03();
 			break;
 		case 'q':

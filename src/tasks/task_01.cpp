@@ -1,4 +1,6 @@
 #include <iostream>
+
+#include "../includes/console.h"
 #include "../includes/tasks.h"
 #include "../includes/array.h"
 
@@ -8,23 +10,31 @@ using namespace std;
 
 void task_01()
 {
-	cout << "task_01" << endl;
-
 	int size = InputSizeArray();
 	vector<int> array = inputElementsOfArray(size);
+	vector<int> indexes = {};
 
-	int maxNegative = array[0];
-	int maxNegativeIndex = 0;
+	int maxNegative = findMaxNegativeElement(array);
 
-	for (int i = 0; i < size; i++)
-		if (array[i] < 0 && array[i] > maxNegative)
-		{
-			maxNegative = array[i];
-			maxNegativeIndex = i;
-		}
-
-	if (maxNegative < 0)
-		cout << "Maximum negative element: " << maxNegative << " at index " << maxNegativeIndex << endl;
-	else
+	if (maxNegative == 0)
+	{
 		cout << "No negative elements in the array." << endl;
+		return;
+	}
+
+	for (int i = 0; i < array.size(); i++)
+		if (array[i] == maxNegative)
+			indexes.push_back(i);
+
+	int indexesSize = indexes.size();
+	if (indexesSize == 1)
+	{
+		cout << "Maximum negative element: " << maxNegative << " at index " << indexes[0] << endl;
+		return;
+	}
+
+	cout << "Maximum negative element: " << maxNegative << " at index [ ";
+	for (int i = 0; i < indexesSize; i++)
+		cout << indexes[i] << (indexesSize - 1 == i ? " " : ", ");
+	cout << "]\n";
 }

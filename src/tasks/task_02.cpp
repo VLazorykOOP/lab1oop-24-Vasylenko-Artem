@@ -5,18 +5,17 @@
 
 // Знайти мінімальне значення серед елементів, менших заданого числа max, і розташованих до першого елемента, більшого заданого числа min.
 
-// [0,1,2,3,4,5,6,7,8,9,10]
-// [4,1,3,2,5,7,2,6,8,9,10]
-// min = 3, max = 7
+// [3, 8, 2, 10, 5, 7, 1, 6]
+//   	  ^
+// min = 8, max = 4
 
 using namespace std;
 
 void task_02()
 {
+	int min, max;
 	int size = InputSizeArray();
 	vector<int> array = inputElementsOfArray(size);
-
-	int min, max;
 
 	cout << "Enter the value of min: ";
 	cin >> min;
@@ -24,17 +23,21 @@ void task_02()
 	cin >> max;
 
 	int minElement = array[0];
-	int minElementIndex = -1;
+	bool isFindElement = false;
 
 	for (int i = 0; i < size; i++)
-		if (array[i] < max && array[i] > min && array[i] < minElement)
+	{
+		if (array[i] > min)
+			break;
+		if (array[i] < max && array[i] <= minElement)
 		{
+			isFindElement = true;
 			minElement = array[i];
-			minElementIndex = i;
 		}
+	}
 
-	if (minElementIndex != -1)
-		cout << "Minimum element: " << minElement << " at index " << minElementIndex << endl;
+	if (isFindElement)
+		cout << "Minimum element: " << minElement << endl;
 	else
 		cout << "No elements in the array that meet the conditions." << endl;
 }

@@ -1,4 +1,4 @@
 #pragma once
 
 int InputSizeArray();
-vector<int> inputElementsOfArray(int size);
+std::vector<int> inputElementsOfArray(int size);

@@ -6,4 +6,6 @@
 2. Press `Ctrl + Shift + P` to open the command palette.
 3. Type **"Run Build Task"** and select it from the list.
    
+   **Alternative method:** You can also press `Ctrl + Shift + B` to directly run the build task without opening the command palette.
+
    - To run the program again, simply press `Ctrl + Shift + B` to rebuild.

@@ -1,5 +1,5 @@
 #pragma once
 
 void clearConsole();
-void showMenuTask();
+void pauseConsole();
 void chooseTask();

@@ -12,7 +12,7 @@ int InputSizeArray()
 	int size = 0;
 	while (size <= 0)
 	{
-		cout << "Enter the size of the array:";
+		cout << "Enter the size of the array: ";
 		cin >> size;
 		clearConsole();
 		cout << "Size must be a positive number." << endl;

@@ -2,6 +2,8 @@
 
 #include "../includes/console.h"
 
+using namespace std;
+
 void clearConsole()
 {
 #ifdef _WIN32
@@ -9,4 +11,12 @@ void clearConsole()
 #else
 	system("clear");
 #endif
+}
+
+void pauseConsole()
+{
+	cout << "\nPress any key to continue...\n";
+	getchar();
+	getchar();
+	clearConsole();
 }

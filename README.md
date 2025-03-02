@@ -1,6 +1,6 @@
 # Lab work #1
 
-### Build and Run C++ Program
+### Build and Run C++ Program (Macos / Linux)
 
 1. Open your project folder in Visual Studio Code.
 2. Press `Ctrl + Shift + P` to open the command palette.

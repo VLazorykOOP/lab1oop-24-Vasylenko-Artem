@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../includes/console.h"
+#include "console.h"
 
 void clearConsole()
 {

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "../includes/console.h"
-#include "../includes/tasks.h"
+#include "console.h"
+#include "tasks.h"
 
 using namespace std;
 

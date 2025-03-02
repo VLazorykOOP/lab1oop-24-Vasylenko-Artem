@@ -2,8 +2,8 @@
 #include <vector>
 #include <climits>
 
-#include "../includes/array.h"
-#include "../includes/console.h"
+#include "array.h"
+#include "console.h"
 
 using namespace std;
 

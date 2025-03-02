@@ -2,22 +2,31 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build and Run C++",
+			"label": "Build C++",
 			"type": "shell",
-			"command": "echo 'Building...' && mkdir -p build && clang++ -std=c++20 $(find src -name '*.cpp') -o build/main && echo 'Running...' && ./build/main",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"command": "echo 'Building...' && mkdir -p build && clang++ -std=c++20 -I\"${workspaceFolder}/includes\" $(find src -name '*.cpp') -o build/main",
+			"group": "build",
 			"problemMatcher": ["$gcc"],
 			"detail": "Compiling C++ files"
 		},
 		{
 			"label": "Run C++",
 			"type": "shell",
-			"command": "./build/main",
-			"dependsOn": "Build and Run C++",
-			"problemMatcher": []
+			"command": "echo 'Running...' && ./build/main",
+			"dependsOn": "Build C++",
+			"problemMatcher": [],
+			"detail": "Running the compiled C++ program"
+		},
+		{
+			"label": "Build and Run C++",
+			"type": "shell",
+			"dependsOn": ["Build C++", "Run C++"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "Building and running the C++ program"
 		}
 	]
 }

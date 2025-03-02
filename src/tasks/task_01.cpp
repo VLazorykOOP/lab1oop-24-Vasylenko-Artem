@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "../includes/console.h"
-#include "../includes/tasks.h"
-#include "../includes/array.h"
+#include "console.h"
+#include "tasks.h"
+#include "array.h"
 
 // Задано одновимірний масив А розміру N.Знайти серед всіх від’ємних максимальний елемент масиву та його індекс.
 

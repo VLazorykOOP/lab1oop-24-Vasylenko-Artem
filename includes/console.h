@@ -3,4 +3,3 @@
 void clearConsole();
 void pauseConsole();
 void newLine();
-void chooseTask();
